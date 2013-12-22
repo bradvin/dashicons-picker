@@ -3,6 +3,8 @@ dashicons-picker
 
 A jQuery plugin to make picking [Dashicons](http://melchoyce.github.io/dashicons/) in WordPress a breeze
 
+![dashicons-picker](https://raw.github.com/bradvin/dashicons-picker/master/dashicons-picker-jquery-plugin.jpg "dashicons-picker")
+
 ## Installation ##
 
 First, include both the dashicons-picker.css and dashicons-picker.js files:
