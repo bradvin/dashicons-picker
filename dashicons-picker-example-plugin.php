@@ -4,30 +4,35 @@
  * Description: A plugin to showcase the dashicons picker
  * Author: Brad Vincent
  * Author URI: http://themergency.com
- * Version: 1.0
+ * Version: 1.1
  */
 
+add_action( 'admin_init', 'dashicons_picker_register_settings' );
 function dashicons_picker_register_settings() {
+	
 	register_setting( 'dashicons_picker_settings_group', 'dashicons_picker_settings' );
 }
-add_action( 'admin_init', 'dashicons_picker_register_settings' );
 
+add_action( 'admin_menu', 'dashicons_picker_settings_menu' );
 function dashicons_picker_settings_menu() {
+	
 	add_options_page( __( 'Dashicons Picker Example' ), __( 'Dashicons Picker Example' ), 'manage_options', 'dashicons_picker_settings', 'dashicons_picker_settings_page' );
 }
-add_action( 'admin_menu', 'dashicons_picker_settings_menu' );
 
+add_action( 'admin_enqueue_scripts', 'dashicons_picker_scripts' );
 function dashicons_picker_scripts() {
+	
 	$css = plugin_dir_url( __FILE__ ) . 'css/dashicons-picker.css';
-    wp_enqueue_style( 'dashicons-picker', $css, array( 'dashicons' ), '1.0' );
+	wp_enqueue_style( 'dashicons-picker', $css, array( 'dashicons' ), '1.0' );
 
 	$js = plugin_dir_url( __FILE__ ) . 'js/dashicons-picker.js';
-	wp_enqueue_script( 'dashicons-picker', $js, array( 'jquery' ), '1.0' );
+	wp_enqueue_script( 'dashicons-picker', $js, array( 'jquery' ), '1.1' );
 }
-add_action( 'admin_enqueue_scripts', 'dashicons_picker_scripts' );
 
 function dashicons_picker_settings_page() {
-	$options = get_option( 'dashicons_picker_settings' ); ?>
+	
+	$options = get_option( 'dashicons_picker_settings' );
+?>
 
 	<div class="wrap">
 		<h2><?php _e('Dashicons Example Settings'); ?></h2>
@@ -65,6 +70,5 @@ function dashicons_picker_settings_page() {
 			<?php submit_button(); ?>
 		</form>
 	</div>
-	<?php
+<?php
 }
-
