@@ -326,7 +326,7 @@
 					}
 				} );
 
-				$( document ).mouseup( function ( e ) {
+				$( document ).bind( 'mouseup.dashicons-picker', function ( e ) {
 					if ( ! popup.is( e.target ) && popup.has( e.target ).length === 0 ) {
 						removePopup();
 					}
@@ -335,6 +335,7 @@
 
 			function removePopup() {
 				$( '.dashicon-picker-container' ).remove();
+				$( document ).unbind( '.dashicons-picker' );
 			}
 		} );
 	};
