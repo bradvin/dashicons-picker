@@ -303,13 +303,9 @@
 				$( 'a', control ).click( function ( e ) {
 					e.preventDefault();
 					if ( $( this ).data( 'direction' ) === 'back' ) {
-						$( 'li:gt(' + ( icons.length - 26 ) + ')', list ).each( function () {
-							$( this ).prependTo( list );
-						} );
+						$( 'li:gt(' + ( icons.length - 26 ) + ')', list ).prependTo( list );
 					} else {
-						$( 'li:lt(25)', list ).each( function () {
-							$( this ).appendTo( list );
-						} );
+						$( 'li:lt(25)', list ).appendTo( list );
 					}
 				} );
 
