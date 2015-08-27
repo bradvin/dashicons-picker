@@ -255,6 +255,8 @@
 			'thumbs-up',
 			'thumbs-down',
 			'layout',
+			'',
+			'',
 			''
 		];
 
