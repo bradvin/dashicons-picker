@@ -262,9 +262,13 @@
 
 		return this.each( function () {
 
-			var button = $( this );
+			var button = $( this ),
+				offsetTop,
+				offsetLeft;
 
-			button.on( 'click.dashiconsPicker', function () {
+			button.on( 'click.dashiconsPicker', function ( e ) {
+				offsetTop = $( e.currentTarget ).offset().top;
+				offsetLeft = $( e.currentTarget ).offset().left;
 				createPopup( button );
 			} );
 
@@ -276,8 +280,8 @@
 						<ul class="dashicon-picker-list" /> \
 					</div>' )
 						.css( {
-							'top':  button.offset().top,
-							'left': button.offset().left
+							'top':  offsetTop,
+							'left': offsetLeft
 						} ),
 					list = popup.find( '.dashicon-picker-list' );
 
