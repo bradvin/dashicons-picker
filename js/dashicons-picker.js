@@ -294,9 +294,9 @@
 					e.preventDefault();
 					var title = $( this ).attr( 'title' );
 					target.val( 'dashicons-' + title );
-                    preview
-                        .prop('class', 'dashicons')
-                        .addClass( 'dashicons-' + title );
+					preview
+						.prop('class', 'dashicons')
+						.addClass( 'dashicons-' + title );
 					removePopup();
 				} );
 
