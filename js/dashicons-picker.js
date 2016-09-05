@@ -294,6 +294,9 @@
 					e.preventDefault();
 					var title = $( this ).attr( 'title' );
 					target.val( 'dashicons-' + title );
+                    preview
+                        .prop('class', 'dashicons')
+                        .addClass( 'dashicons-' + title );
 					removePopup();
 				} );
 
@@ -312,9 +315,6 @@
 					} else {
 						$( 'li:lt(25)', list ).appendTo( list );
 					}
-					preview
-						.prop('class', 'dashicons')
-						.addClass( 'dashicons-' + title );
 				} );
 
 				popup.appendTo( 'body' ).show();
