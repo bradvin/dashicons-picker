@@ -275,6 +275,7 @@
 			function createPopup( button ) {
 
 				var target = $( button.data( 'target' ) ),
+					preview = $( button.data( 'preview' ) ),
 					popup  = $( '<div class="dashicon-picker-container"> \
 						<div class="dashicon-picker-control" /> \
 						<ul class="dashicon-picker-list" /> \
@@ -293,6 +294,9 @@
 					e.preventDefault();
 					var title = $( this ).attr( 'title' );
 					target.val( 'dashicons-' + title );
+					preview
+						.prop('class', 'dashicons')
+						.addClass( 'dashicons-' + title );
 					removePopup();
 				} );
 
