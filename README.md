@@ -37,4 +37,3 @@ Download this [entire repo](https://github.com/bradvin/dashicons-picker/archive/
 Thanks to these projects for inspiration, ideas and code:
 
 * [http://victor-valencia.github.io/bootstrap-iconpicker/](http://victor-valencia.github.io/bootstrap-iconpicker/)
-* [http://titosust.github.io/Bootstrap-icon-picker/](http://titosust.github.io/Bootstrap-icon-picker/)
