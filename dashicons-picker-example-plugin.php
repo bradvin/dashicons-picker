@@ -1,41 +1,58 @@
 <?php
+
 /**
  * Plugin Name: Dashicons Picker Example Plugin
  * Description: A plugin to showcase the dashicons picker
- * Author: Brad Vincent
- * Author URI: http://themergency.com
- * Version: 1.1
+ * Author:      Brad Vincent
+ * Author URI:  http://themergency.com
+ * Version:     1.1
  */
 
-add_action( 'admin_init', 'dashicons_picker_register_settings' );
+/**
+ * Register example picker setting
+ *
+ * @since 1.1
+ */
 function dashicons_picker_register_settings() {
-	
 	register_setting( 'dashicons_picker_settings_group', 'dashicons_picker_settings' );
 }
+add_action( 'admin_init', 'dashicons_picker_register_settings' );
 
-add_action( 'admin_menu', 'dashicons_picker_settings_menu' );
+/**
+ * Register menu for example settings page
+ *
+ * @since 1.1
+ */
 function dashicons_picker_settings_menu() {
-	
 	add_options_page( __( 'Dashicons Picker Example' ), __( 'Dashicons Picker Example' ), 'manage_options', 'dashicons_picker_settings', 'dashicons_picker_settings_page' );
 }
+add_action( 'admin_menu', 'dashicons_picker_settings_menu' );
 
-add_action( 'admin_enqueue_scripts', 'dashicons_picker_scripts' );
+/**
+ * Enqueue dashicons picker scripts
+ *
+ * @since 1.1
+ */
 function dashicons_picker_scripts() {
-	
-	$css = plugin_dir_url( __FILE__ ) . 'css/dashicons-picker.css';
-	wp_enqueue_style( 'dashicons-picker', $css, array( 'dashicons' ), '1.0' );
 
-	$js = plugin_dir_url( __FILE__ ) . 'js/dashicons-picker.js';
-	wp_enqueue_script( 'dashicons-picker', $js, array( 'jquery' ), '1.1' );
+	$plugin_url = plugin_dir_url( __FILE__ );
+
+	wp_enqueue_style( 'dashicons-picker',  $plugin_url . 'css/dashicons-picker.css', array( 'dashicons' ), '1.0', false );
+	wp_enqueue_script( 'dashicons-picker', $plugin_url . 'js/dashicons-picker.js',   array( 'jquery'    ), '1.1', true  );
 }
+add_action( 'admin_enqueue_scripts', 'dashicons_picker_scripts' );
 
+/**
+ * Ouput for the example dashicons picker page
+ *
+ * @since 1.1
+ */
 function dashicons_picker_settings_page() {
-	
-	$options = get_option( 'dashicons_picker_settings' );
-?>
+
+	$options = get_option( 'dashicons_picker_settings' ); ?>
 
 	<div class="wrap">
-		<h2><?php _e('Dashicons Example Settings'); ?></h2>
+		<h2><?php _e( 'Dashicons Example Settings' ); ?></h2>
 		<form method="post" action="options.php" class="options_form">
 			<?php settings_fields( 'dashicons_picker_settings_group' ); ?>
 			<table class="form-table">
@@ -67,8 +84,11 @@ function dashicons_picker_settings_page() {
 					</td>
 				</tr>
 			</table>
+
 			<?php submit_button(); ?>
+
 		</form>
 	</div>
+
 <?php
 }
