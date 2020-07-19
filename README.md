@@ -9,7 +9,7 @@ A jQuery plugin to make picking [Dashicons](https://developer.wordpress.org/reso
 
 First, include both the dashicons-picker.css and dashicons-picker.js files:
 
-```
+```php
 function dashicons_picker_scripts() {
 	$css = plugin_dir_url( __FILE__ ) . 'css/dashicons-picker.css';
     wp_enqueue_style( 'dashicons-picker', $css, array( 'dashicons' ), '1.0' );
@@ -24,7 +24,7 @@ Together, the 2 files are less than 8KB. And that is unminified, which is very s
 
 Then in your HTML, give the button a class or "dashicons-picker" and include a data-target attribute which stores the selector to the textbox:
 
-```
+```html
 <input class="regular-text" id="dashicons_picker_example_icon1" type="text" />
 <input class="button dashicons-picker" type="button" value="Choose Icon" data-target="#dashicons_picker_example_icon1" />
 ```
