@@ -343,8 +343,8 @@
 				var target = $( button.data( 'target' ) ),
 					preview = $( button.data( 'preview' ) ),
 					popup  = $( '<div class="dashicon-picker-container"> \
-						<div class="dashicon-picker-control" /> \
-						<ul class="dashicon-picker-list" /> \
+						<div class="dashicon-picker-control"></div> \
+						<ul class="dashicon-picker-list"></ul> \
 					</div>' )
 						.css( {
 							'top':  offsetTop,
