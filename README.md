@@ -12,7 +12,7 @@ First, include both the dashicons-picker.css and dashicons-picker.js files:
 ```php
 function dashicons_picker_scripts() {
 	$css = plugin_dir_url( __FILE__ ) . 'css/dashicons-picker.css';
-    wp_enqueue_style( 'dashicons-picker', $css, array( 'dashicons' ), '1.0' );
+	wp_enqueue_style( 'dashicons-picker', $css, array( 'dashicons' ), '1.0' );
 
 	$js = plugin_dir_url( __FILE__ ) . 'js/dashicons-picker.js';
 	wp_enqueue_script( 'dashicons-picker', $js, array( 'jquery' ), '1.0' );
