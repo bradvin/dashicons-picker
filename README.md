@@ -20,7 +20,7 @@ function dashicons_picker_scripts() {
 add_action( 'admin_enqueue_scripts', 'dashicons_picker_scripts' );
 ```
 
-Together, the 2 files are less than 8KB. And that is unminified, which is very small indeed. And as you can see in the code above, the CSS file is dependent on 'dashicons' so that will automatically include the stylesheets needed to view the dashicons font.
+Together, the 2 files are less than 8kB. And that is unminified, which is very small indeed. And as you can see in the code above, the CSS file is dependent on 'dashicons' so that will automatically include the stylesheets needed to view the dashicons font.
 
 Then in your HTML, give the button a class or "dashicons-picker" and include a data-target attribute which stores the selector to the textbox:
 
