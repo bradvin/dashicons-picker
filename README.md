@@ -12,15 +12,15 @@ First, include both the dashicons-picker.css and dashicons-picker.js files:
 ```php
 function dashicons_picker_scripts() {
 	$css = plugin_dir_url( __FILE__ ) . 'css/dashicons-picker.css';
-    wp_enqueue_style( 'dashicons-picker', $css, array( 'dashicons' ), '1.0' );
+	wp_enqueue_style( 'dashicons-picker', $css, array( 'dashicons' ), '1.0' );
 
 	$js = plugin_dir_url( __FILE__ ) . 'js/dashicons-picker.js';
 	wp_enqueue_script( 'dashicons-picker', $js, array( 'jquery' ), '1.0' );
 }
-add_action( 'admin_enqueue_scripts', 'dashicons_picker_scripts' );</pre>
+add_action( 'admin_enqueue_scripts', 'dashicons_picker_scripts' );
 ```
 
-Together, the 2 files are less than 8KB. And that is unminified, which is very small indeed. And as you can see in the code above, the CSS file is dependent on 'dashicons' so that will automatically include the stylesheets needed to view the dashicons font.
+Together, the 2 files are less than 8kB. And that is unminified, which is very small indeed. And as you can see in the code above, the CSS file is dependent on 'dashicons' so that will automatically include the stylesheets needed to view the dashicons font.
 
 Then in your HTML, give the button a class or "dashicons-picker" and include a data-target attribute which stores the selector to the textbox:
 
